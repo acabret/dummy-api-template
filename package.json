@@ -7,8 +7,9 @@
     "start": "node ./build/index.js",
     "dev": "ts-node-dev ./src/index.ts",
     "build": "tsc",
-    "test": "jest",
-    "dist": "sh ./scripts/dist.sh"
+    "build:ui": "cd build/ && rm -rf /dist && cd ../../array-dummy-fe && rm -rf /dist && npm run build && cp -r dist ../dummy-array-api/build",
+    "build:full": "rm -rf /build && npm run build && cd ../../array-dummy-fe && rm -rf /dist && npm run build && cp -r dist ../dummy-array-api/build",
+    "test": "jest"
   },
   "author": "Alonso Cabret",
   "license": "MIT",

@@ -3,6 +3,7 @@ import { arrayDummyRoutes } from "./routes";
 
 const app = express();
 
+app.use(express.static("dist/array-dummy-fe"));
 app.use(express.json());
 
 arrayDummyRoutes(app);
