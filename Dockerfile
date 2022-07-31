@@ -16,4 +16,6 @@ FROM gcr.io/distroless/nodejs:14
 WORKDIR /usr/app
 COPY --from=ts-remover /usr/app ./
 USER 1000
+ENV PORT=8080 
+EXPOSE 8080
 CMD ["index.js"]
