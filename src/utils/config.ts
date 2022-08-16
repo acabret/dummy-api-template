@@ -1,5 +1,5 @@
-if(process.env.NODE_ENV === "dev")
-    require("dotenv").config();
+// const logger = require('../logger/api.logger');
+// if(process.env.NODE_ENV === "dev")
+require("dotenv").config();
 
 export const PORT = process.env.PORT || 3000;
-
