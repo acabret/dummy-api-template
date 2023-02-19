@@ -12,10 +12,12 @@ arrayDummyRoutes(app);
 
 app.get("/health-check", (req, res) => res.status(200).json({ message: "api funcionando correctamente" }));
 
-app.use((req: Request, res: Response) => {
-  // const newError = new Error("no se encuentra la ruta");
-  
+app.use((req: Request, res: Response, next: NextFunction) => {
   return res.status(404).end();
 });
+
+app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
+  return res.status(500).end();
+})
 
 export default app;
